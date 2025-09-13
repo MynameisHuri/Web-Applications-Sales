@@ -12,7 +12,6 @@
         <a href="items.php" class="nav-btn">Items</a>
         <a href="inventory.php" class="nav-btn">Inventory</a>
         <a href="sales.php" class="nav-btn">Sales</a>
-        <a href="sample.php" class="nav-btn">Items</a>
     </div>
 </body>
 </html>

@@ -296,3 +296,22 @@ body.index-page {
     background-color: #27ae60;
     color: white;
 }
+
+.delete-circle{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #dc3545;
+    background-color: #ffff;
+    color: #dc3545;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    padding: 0;
+    transition: all 0.3 ease;
+}
+
+.delete-circle:hover{
+    background-color: #dc3545;
+    color: #ffff;
+}

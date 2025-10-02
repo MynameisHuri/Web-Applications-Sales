@@ -36,7 +36,6 @@
         </button>
     </div>
 
-    <!-- Items Table -->
     <table class="table table-bordered text-center table-hover align-middle">
         <thead class="table-light">
             <tr>
@@ -49,14 +48,14 @@
         </thead>
         <tbody>
         @foreach($items as $item)
-            <tr>
+            <tr class="clickable-row" data-bs-toggle="modal" data-bs-target="#editItemModal{{ $item->id }}">
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>₱ {{ number_format($item->price) }}</td>
                 <td>{{ \Carbon\Carbon::parse($item->date_added)->format('Y-m-d') }}</td>
                 <td>
-                    <button class="btn btn-sm btn-warning text-white" data-bs-toggle="modal" data-bs-target="#editItemModal{{ $item->id }}">Update</button>
-                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteItemModal{{ $item->id }}">Delete</button>
+                    <button class="btn btn-sm delete-circle" data-bs-toggle="modal" data-bs-target="#deleteItemModal{{$item->id}}"
+                        onclick="event.stopProgpagation()">&times;
                 </td>
             </tr>
 
@@ -80,6 +79,11 @@
                                     <label for="price{{ $item->id }}" class="form-label">Price</label>
                                     <input type="number" name="price" id="price{{ $item->id }}" class="form-control" value="{{ $item->price }}" step="1000" required>
                                 </div>
+                                <div class="mb-2">
+                                    <label class="form-label">Date Added</label>
+                                    <input type="text" class="form-control bg-light" value="{{ \Carbon\Carbon::parse($item->date_added)->format('Y-m-d') }}" readonly>
+                                </div>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-warning text-white">Save</button>

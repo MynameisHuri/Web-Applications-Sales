@@ -34,6 +34,7 @@
                 <th>ID</th>
                 <th>Item</th>
                 <th>Quantity</th>
+                <th>Status</th>
                 <th>Date Added</th>
             </tr>
         </thead>
@@ -43,6 +44,17 @@
                 <td>{{ $inventory->id }}</td>
                 <td>{{ $inventory->item->name }}</td>
                 <td>{{ $inventory->quantity }}</td>
+
+                <td>
+                    @if($inventory-> quantity == 0)
+                        <span class="badge bg-danger">Out of Stock</span>
+                    @elseif($inventory->quantity <= 5)
+                        <span class="badge bg-warning">Low Stock</span>
+                    @else
+                        <span class="badge bg-success ">On Stock</span>
+                    @endif
+                </td>
+
                 <td>{{ \Carbon\Carbon::parse($inventory->date_added)->format('Y-m-d') }}</td>
             </tr>
             @endforeach

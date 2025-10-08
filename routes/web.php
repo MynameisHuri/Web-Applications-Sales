@@ -5,10 +5,10 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\SalesReportController;
-
+use App\Http\Controllers\DashboardController;
 
 // Index Page
-    Route::get('/', function () {return view('index');})->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 // Item Maintenance Page 
     Route::get('/ItemMaintenancePage', [ItemController::class, 'index'])->name('item.maintenance');

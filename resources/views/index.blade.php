@@ -65,22 +65,25 @@
         <h1>Dashboard</h1>
 
         <div class="stats">
+          <!-- Total Items -->
           <div class="card">
             <i class="fa-solid fa-box"></i>
-            <h3>{{ $totalStocks ?? 0 }}</h3>
-            <p>Items in Stock</p>
+            <h3>{{ $totalItems ?? 0 }}</h3>
+            <p>Total Items</p>
           </div>
 
+          <!-- Total Stocks -->
+          <div class="card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>{{ $totalStocks ?? 0 }}</h3>
+            <p>Total Stocks</p>
+          </div>
+
+          <!-- Total Sales -->
           <div class="card">
             <i class="fa-solid fa-chart-line"></i>
             <h3>₱{{ number_format($totalSales ?? 0, 2) }}</h3>
             <p>Total Sales</p>
-          </div>
-
-          <div class="card">
-            <i class="fa-solid fa-users"></i>
-            <h3>{{ $customers ?? 0 }}</h3>
-            <p>Customers</p>
           </div>
         </div>
       </section>

@@ -10,12 +10,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // Count all items
-        $totalItems = Item::count();
-        // Sum all inventory quantities (total stocks)
-        $totalStocks = Inventory::sum('quantity');
-        // Sum all sales
-        $totalSales = Sale::sum('total_sales');
+        $totalItems = Item::count(); // Number of unique items
+        $totalStocks = Inventory::sum('quantity'); // Total quantity in stock
+        $totalSales = Sale::sum('total_sales'); // Total sales amount
 
         return view('index', compact('totalItems', 'totalStocks', 'totalSales'));
     }

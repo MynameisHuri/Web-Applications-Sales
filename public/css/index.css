@@ -1,4 +1,4 @@
-body, html {
+body{
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -221,4 +221,64 @@ body, html {
 .card p {
   color: #555;
   font-size: 15px;
+}
+
+/* === Table Container === */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* === Table Header === */
+.table thead th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  padding: 14px;
+  border-bottom: 2px solid #dee2e6;
+  text-align: center;
+}
+
+/* === Table Rows === */
+.table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+.table tbody tr:hover {
+  background-color: #f3f6ff;
+}
+
+/* === Table Cells === */
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #e9ecef;
+  color: #555;
+}
+
+/* === Buttons in Table === */
+.table button.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  transition: background-color 0.2s ease;
+}
+
+.table button.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+/* === Table Container Responsiveness === */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
